@@ -28,7 +28,7 @@ const MaskedField = React.createClass({
     onComplete: React.PropTypes.func,
     onFocus: React.PropTypes.func,
     onBlur: React.PropTypes.func,
-    valueLink: React.PropTypes.object
+    //valueLink: React.PropTypes.object
   },
   getInitialState() {
     if (!this.props.mask) {
@@ -68,7 +68,7 @@ const MaskedField = React.createClass({
         onFocus: this._handleFocus,
         onBlur: this._handleBlur,
         value: this.state.value,
-        valueLink: null
+        //valueLink: null
       };
 
       if (!this.props.placeholder) {
@@ -92,11 +92,11 @@ const MaskedField = React.createClass({
     }
   },
   _getPropsValue() {
-    if (this.props.valueLink) {
-      return this.props.valueLink.value;
-    } else {
+    //if (this.props.valueLink) {
+    //  return this.props.valueLink.value;
+    //} else {
       return this.props.value;
-    }
+    //}
   },
   _getPattern(idx) {
     const maskChar = this.props.mask[idx];
@@ -153,9 +153,10 @@ const MaskedField = React.createClass({
     return prev;
   },
   _callOnChange(value) {
-    if (this.props.valueLink) {
-      this.props.valueLink.requestChange(value);
-    } else if (this.props.onChange) {
+    //if (this.props.valueLink) {
+    //  this.props.valueLink.requestChange(value);
+    //} else if (this.props.onChange) {
+    if (this.props.onChange) {
       this.props.onChange({target: {value}});
     }
   },
