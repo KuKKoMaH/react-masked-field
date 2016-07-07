@@ -17,6 +17,12 @@ const DEFAULT_TRANSLATIONS = {
 
 const BLANK_CHAR = '_';
 
+const PARENT_FIELDS = [
+  'classNames',
+  'type'
+];
+const PARENT_FIELDS_LENGTH = PARENT_FIELDS.length;
+
 const MaskedField = React.createClass({
   propTypes: {
     mask: React.PropTypes.string,
@@ -71,12 +77,17 @@ const MaskedField = React.createClass({
         //valueLink: null
       };
 
+      for(let i = 0; i < PARENT_FIELDS_LENGTH; i++){
+        const field = PARENT_FIELDS[i];
+        props[field] = this.props[field];
+      }
+
       if (!this.props.placeholder) {
         props.placeholder = this._initialBuffer().join('');
       }
     }
 
-    return <input ref={c => (this._input = c)} {...props} type='text' />;
+    return <input ref={c => (this._input = c)} {...props} />;
   },
   _getSelection() {
     if (this._isMounted) {
