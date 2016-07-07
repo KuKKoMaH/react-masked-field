@@ -16,7 +16,8 @@
     "LICENSE",
     "README.md",
     "CHANGELOG.md",
-    "lib"
+    "lib",
+    "src"
   ],
   "keywords": [
     "react",
