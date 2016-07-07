@@ -18,7 +18,7 @@ const DEFAULT_TRANSLATIONS = {
 const BLANK_CHAR = '_';
 
 const PARENT_FIELDS = [
-  'classNames',
+  'className',
   'type'
 ];
 const PARENT_FIELDS_LENGTH = PARENT_FIELDS.length;
